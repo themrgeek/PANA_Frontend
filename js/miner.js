@@ -6,7 +6,7 @@ async function mineBlock() {
 }
 
 async function getChain() {
-  const res = await fetch(`https://https-github-com-themrgeek-pana-2.onrender.com/wallet/create/chain`);
+  const res = await fetch(`https://https-github-com-themrgeek-pana-2.onrender.com/wallet/chain`);
   const data = await res.json();
   document.getElementById('chainOutput').textContent = JSON.stringify(data, null, 2);
 }
