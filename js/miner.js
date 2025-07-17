@@ -1,6 +1,10 @@
 async function mineBlock() {
   const address = document.getElementById('miner').value;
-  const res = await fetch(`https://https-github-com-themrgeek-pana-2.onrender.com/mine/${address}`, { method: 'POST' });
+  const res = await fetch(`https://https-github-com-themrgeek-pana-2.onrender.com/mine/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ address })
+  });
   const data = await res.json();
   document.getElementById('mineOutput').textContent = data.message || data.error;
 }
